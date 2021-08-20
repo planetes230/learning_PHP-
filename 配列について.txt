@@ -1,0 +1,36 @@
+// function numsum ($array) {
+//     for($i=0;$i<$array;$i++){
+//         $num = $i;
+//     }
+// $sum = 0;
+// foreach($num as $value) {
+//     if($value == 5) {
+//         continue;
+//     }else if($value == 6) {
+//         $sum -= $value;
+//         continue;
+//     }
+//     $sum += $value;
+// } ;
+// echo $sum;
+// }
+// $array = 10;
+// numsum($array);
+
+$empty_array = array();
+$empty_array = [];
+$empty_array[] = 1 ;
+$empty_array[] = 2 ;
+$empty_array[] = 3 ;
+
+// unset ($empty_array[1]);　　　　　//指定したキーの要素を削除
+// array_splice($empty_array,2);　　　//第2引数の後の要素を削除　
+array_pop($empty_array);　　　　　　　	//先頭の要素を削除
+var_dump($empty_array);　　　　　　　
+
+foreach 
+continue;
+
+条件分を設定し、continue以下の処理をスキップし次のループへ
+
+

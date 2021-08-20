@@ -1,0 +1,27 @@
+$users = [
+       'user1'=> [
+                  'name' => 'taro',
+                  'age' => 32,
+                  'hobby' => [
+                                'soccer',
+                                'baseball'
+                             ],
+        ],
+       'user2' => [
+                    'name' => 'jiro',
+                    'age' => 43,
+                    'hobby' => [
+                                'soccer',
+                                'baseball'
+                             ],
+                    ],
+       'user3'=> [
+                   'name' =>'saburo',
+                    'age' => 43,
+                    'hobby' => [
+                                'soccer',
+                                'baseball'
+                             ]
+                    ]
+       
+        ];

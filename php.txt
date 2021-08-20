@@ -1,0 +1,2 @@
+どういう条件で真偽地がtrue falseになるのか
+isset emptyの違い

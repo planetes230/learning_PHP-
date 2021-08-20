@@ -1,0 +1,89 @@
+配列の生成(宣言)方法(2種類)
+$var = array(値1, 値2, ...);
+array(
+    key  => value,
+    key2 => value2,
+    key3 => value3,
+);
+
+配列の参照方法
+var_dump($配列名）
+
+配列の数の確認方法 - count()
+count($配列名）;
+
+配列の要素を追加する方法 - []（括弧使用）
+追加したい配列[] ＝ 要素
+
+配列の要素を削除する方法 - unset()
+unset($配列[キー] [,$配列[キー]...])
+
+配列の最後に要素を追加する方法 - array_push()
+array_push( 要素を追加する配列 , 追加したい要素1 [, 追加したい要素2 ] )
+
+配列の最後に要素を削除する方法 - array_pop()
+$stack = array("orange", "banana", "apple", "raspberry");
+$fruit = array_pop($stack);
+
+配列の最初に要素を追加する方法 - array_unshift()
+$queue = array("orange", "banana");
+array_unshift($queue, "apple", "raspberry");
+
+配列の最初に要素を削除する方法 - array_shift()
+array_shift ( 配列 )
+
+配列の一部を削除し、他の要素で置換する方法 - array_splice()
+array_splice( 配列, 削除開始位置, [, 削除する配列の要素数 [, 置き換える要素 ] ] )
+
+⇒削除
+$fruits = array("いちご", "りんご", "ぶどう", "ばなな");
+array_splice($fruits, 1);
+⇒置き換え
+$fruits = array("いちご", "りんご", "ぶどう", "ばなな");
+array_splice($stack, 1, 2, "みるく");
+
+
+配列同士をくっつける方法 - array_merge()
+$array1 = [1, 2, 3];
+$array2 = [10, 20, 30];
+$array3 = [100, 200, 300];
+
+//配列を結合する
+$array = array_merge($array1, $array2, $array3);
+
+配列をソートする方法 - sort(), rsort()
+
+⇒sort
+$money = [100, 50, 20, 4000];
+
+sort($money);
+var_dump($money);
+
+array(4) {
+  [0]=>
+  int(20)
+  [1]=>
+  int(50)
+  [2]=>
+  int(100)
+  [3]=>
+  int(4000)
+}
+
+⇒rsort
+$money = [100, 50, 20, 4000];
+
+rsort($money);
+
+var_dump($money);
+
+array(4) {
+  [0]=>
+  int(4000)
+  [1]=>
+  int(100)
+  [2]=>
+  int(50)
+  [3]=>
+  int(20)
+}
