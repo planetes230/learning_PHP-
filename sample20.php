@@ -11,7 +11,7 @@ $ext = substr($file['name'],-4);
 if($ext == '.gif' || $ext == '.jpg' || $ext == '.png') {
   $filePath = './user_img/'.$file['name'];
   move_uploaded_file($file['tmp_name'],$filePath);
-  print('<img src="'.$filePath.'" />');
+  print('<img src="/user_img/'.$file['name'].'" />');
 } else {
   print('※拡張子が.gif,.jpg,.pngのいずれかのファイルをアップロードしてください');
 }
