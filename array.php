@@ -123,4 +123,120 @@ foreach($users as $user) {
 }
 
 書き始める前に処理を日本語で書いてみる
+
+
+
+$users = [
+    [
+        'name' => '福本',
+        'hobbies' => [ 
+            'バイク',
+            'ギター',
+            '昼寝',
+            '映画鑑賞',
+            102
+        ]
+    
+    ],
+    [
+        'name' => '趙さん',
+        'age' => '40代',
+        'hobbies' => '映画鑑賞'
+    ],
+    [
+        'name' => 'ズオンさん',
+        'age' => 25
+    ]
+];
+
+foreach($users as $key =>$user) {
+    if($key == 1) continue;  //breakという手段もある　//関数の場合はreturn→以降の処理を呼び出さない //趙さんを出力しない
+    
+    echo $user['name']."\r\n";
+    
+    //ageがない場合不明です。と出力する
+    if(!empty($user['age'])) {
+        echo $user['age']."\r\n";
+    } else {
+        echo '不明です。'."\r\n";
+    }
+    
+    //hobbiesがない場合、なにもしない
+    if(!empty($user['hobbies'])) {
+        //配列の場合ループでhobbiesを出力する
+        if(is_array($user['hobbies'])) {
+            foreach($user['hobbies'] as $hobby) {
+                echo $hobby."\r\n";
+            }
+        //配列ではない場合echoでhobbiesを出力する
+        } else {
+            echo $user['hobbies']."\r\n";
+        }
+    }
+};
+
+//インデントの徹底、見やすくする意識、コメントをいれる、改行を入れて見やすくする（一つの処理ごとに分ける）
+
+?>
+
+
+<?php
+// Your code here!
+
+
+function call_kaigyou($user) {
+    $kaigyou = "\r\n";
+    return $user.$kaigyou;
+}
+
+
+$users = [
+    [
+        'name' => '福本',
+        'hobbies' => [ 
+            'バイク',
+            'ギター',
+            '昼寝',
+            '映画鑑賞',
+            102
+        ]
+    
+    ],
+    [
+        'name' => '趙さん',
+        'age' => '40代',
+        'hobbies' => '映画鑑賞'
+    ],
+    [
+        'name' => 'ズオンさん',
+        'age' => 25
+    ]
+];
+
+foreach($users as $key =>$user) {
+    // if($key == 1) continue;  //breakという手段もある　//関数の場合はreturn→以降の処理を呼び出さない //趙さんを出力しない
+    
+    //echo $user['name']."\r\n";
+     echo call_kaigyou($user['name']);
+    //ageがない場合不明です。と出力する
+    if(!empty($user['age'])) {
+        echo call_kaigyou($user['age']);
+    } else {
+        $unknown ='不明です。';
+         echo call_kaigyou($unknown);
+    }
+    
+    //hobbiesがない場合、なにもしない
+    if(!empty($user['hobbies'])) {
+        //配列の場合ループでhobbiesを出力する
+        if(is_array($user['hobbies'])) {
+            foreach($user['hobbies'] as $hobby) {
+                 echo call_kaigyou($hobby);
+            }
+        //配列ではない場合echoでhobbiesを出力する
+        } else {
+             echo call_kaigyou($user['hobbies']);
+        }
+    }
+};
 ?>
