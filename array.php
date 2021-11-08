@@ -31,10 +31,10 @@ foreach($users3 as $key1=>$value1){
 
 
 
-7/14
-インデント気を付ける
-配列の中に配列を入れるという意識
-上記の場合、2回foreachを回す、その際にインデックスを指定することで配列の中の配列を回すことができる
+//7/14
+//インデント気を付ける
+//配列の中に配列を入れるという意識
+//上記の場合、2回foreachを回す、その際にインデックスを指定することで配列の中の配列を回すことができる
 
 $users = [
     [
@@ -96,8 +96,8 @@ $users = [
 ];
 
 
-hobbyの中に配列を増やした場合、echoができなくなった
-配列の場合の判定をいれて、foreachで出力する様に変更した
+//hobbyの中に配列を増やした場合、echoができなくなった
+//配列の場合の判定をいれて、foreachで出力する様に変更した
 foreach($users as $user) {
    
     echo $user['name']."\n\r";
@@ -122,7 +122,7 @@ foreach($users as $user) {
     }
 }
 
-書き始める前に処理を日本語で書いてみる
+//書き始める前に処理を日本語で書いてみる
 
 
 
@@ -189,6 +189,25 @@ function call_kaigyou($user) {
     return $user.$kaigyou;
 }
 
+function sumAge ($users) {
+    //変数の初期化は必須
+    $sumUserAge =0;
+
+    //usersを取得し、foreachで回す
+    foreach($users as $user) {
+        
+        //取得してきたageを足す
+        if(!empty($user['age'])) {
+            //undefined errorが出た場合には、ifでemptyで回避
+            $sumUserAge += $user['age'];
+        }
+         
+        
+    }
+     //足したageを戻す
+     //foreachの処理が終わった後に返す必要がある、外でないと一回目で処理が終わってしまう
+        return $sumUserAge;
+}
 
 $users = [
     [
@@ -204,7 +223,7 @@ $users = [
     ],
     [
         'name' => '趙さん',
-        'age' => '40代',
+        'age' => 40,
         'hobbies' => '映画鑑賞'
     ],
     [
@@ -221,11 +240,14 @@ foreach($users as $key =>$user) {
     //ageがない場合不明です。と出力する
     if(!empty($user['age'])) {
         echo call_kaigyou($user['age']);
+         
     } else {
         $unknown ='不明です。';
          echo call_kaigyou($unknown);
     }
-    
+        
+
+  
     //hobbiesがない場合、なにもしない
     if(!empty($user['hobbies'])) {
         //配列の場合ループでhobbiesを出力する
@@ -239,4 +261,6 @@ foreach($users as $key =>$user) {
         }
     }
 };
+
+echo sumAge($users);
 ?>
