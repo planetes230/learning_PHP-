@@ -189,7 +189,7 @@ function call_kaigyou($user) {
     return $user.$kaigyou;
 }
 
-function sumAge ($users) {
+function sumAge($users) {
     //変数の初期化は必須
     $sumUserAge =0;
 
@@ -201,12 +201,10 @@ function sumAge ($users) {
             //undefined errorが出た場合には、ifでemptyで回避
             $sumUserAge += $user['age'];
         }
-         
-        
     }
      //足したageを戻す
      //foreachの処理が終わった後に返す必要がある、外でないと一回目で処理が終わってしまう
-        return $sumUserAge;
+    return $sumUserAge;
 }
 
 $users = [
