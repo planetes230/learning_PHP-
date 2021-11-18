@@ -56,7 +56,8 @@ function name_change($users) {
         if(!empty($user['age'])) {
             $users[$key]['name'] =$user['age'].'歳の'.$user['name'].'です。';
         } else {
-            echo '年齢不明の'.$user['name'].'です。';
+            $users[$key]['name'] = '年齢不明の'.$user['name'].'です。';
+           
         }
 
         
