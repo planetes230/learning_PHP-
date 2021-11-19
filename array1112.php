@@ -65,6 +65,18 @@ function name_change($users) {
     }
     return $users;
 }
+
+function add_info($users) {
+    foreach($users as $key =>$user) {
+        //ageがあればinfoのカラムを追加する
+        if(!empty($user['age'])) {
+            $users[$key]['info'] =1;
+        } else {
+           
+        }  
+    }
+    return $users;
+}
 // foreach($users as $key =>$user) {
 //     // if($key == 1) continue;  //breakという手段もある　//関数の場合はreturn→以降の処理を呼び出さない //趙さんを出力しない
     
@@ -93,7 +105,12 @@ function name_change($users) {
 // };
 
 // echo sumAge($users);
-var_dump(name_change($users));
+// var_dump(name_change($users));
 
+var_dump(add_info($users));
+
+
+//infoを追加
+//ageがない人がいればuserを削除
 
 ?>
