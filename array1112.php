@@ -54,7 +54,7 @@ function name_change($users) {
     foreach($users as $key =>$user) {
         //ageがあればを名前を書き換える
         if(!empty($user['age'])) {
-            $users[$key]['name'] =$user['age'].'歳の'.$user['name'].'です。';
+            $users[$key]['name'] = $user['age'].'歳の'.$user['name'].'です。';
         } else {
             $users[$key]['name'] = '年齢不明の'.$user['name'].'です。';
 
