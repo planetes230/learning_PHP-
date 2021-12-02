@@ -72,7 +72,7 @@ function add_info($users) {
         if(!empty($user['age'])) {
             $users[$key]['info'] =1;
         } else {
-           
+           unset($users[$key]);
         }  
     }
     return $users;
