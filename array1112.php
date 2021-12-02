@@ -3,14 +3,14 @@
 $users = [
     [
         'name' => '福本',
-        'hobbies' => [ 
+        'hobbies' => [
             'バイク',
             'ギター',
             '昼寝',
             '映画鑑賞',
             102
         ]
-    
+
     ],
     [
         'name' => '趙さん',
@@ -29,7 +29,7 @@ $users = [
 
 //     //usersを取得し、foreachで回す
 //     foreach($users as $user) {
-        
+
 //         //取得してきたageを足す
 //         if(!empty($user['age'])) {
 //             //undefined errorが出た場合には、ifでemptyで回避
@@ -54,14 +54,14 @@ function name_change($users) {
     foreach($users as $key =>$user) {
         //ageがあればを名前を書き換える
         if(!empty($user['age'])) {
-            $users[$key]['name'] =$user['age'].'歳の'.$user['name'].'です。';
+            $users[$key]['name'] = $user['age'].'歳の'.$user['name'].'です。';
         } else {
             $users[$key]['name'] = '年齢不明の'.$user['name'].'です。';
-           
+
         }
 
-        
-        
+
+
     }
     return $users;
 }
@@ -79,17 +79,17 @@ function add_info($users) {
 }
 // foreach($users as $key =>$user) {
 //     // if($key == 1) continue;  //breakという手段もある　//関数の場合はreturn→以降の処理を呼び出さない //趙さんを出力しない
-    
+
 //      echo call_kaigyou($user['name']);
 //     //ageがない場合不明です。と出力する
 //     if(!empty($user['age'])) {
 //         echo call_kaigyou($user['age']);
-         
+
 //     } else {
 //         $unknown ='不明です。';
 //          echo call_kaigyou($unknown);
 //     }
-        
+
 //     //hobbiesがない場合、なにもしない
 //     if(!empty($user['hobbies'])) {
 //         //配列の場合ループでhobbiesを出力する
